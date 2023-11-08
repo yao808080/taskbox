@@ -149,3 +149,10 @@ PS C:\dev\storybook\taskbox>
 src/index.cssのcolorを修正
 
 ![Alt text](image-11.png)
+
+
+# Composite component
+
+新規作成
+src\components\TaskList.vue
+src\components\TaskList.stories.js
