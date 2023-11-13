@@ -458,6 +458,8 @@ yarn playwright install
 ```
 yarn test-storybook --watch
 ```
+
+```
  PASS   browser: chromium  src/components/PureInboxScreen.stories.js
   PureInboxScreen
     Default
@@ -482,3 +484,19 @@ Watch Usage
  › Press Enter to trigger a test run.
 ```
 
+## GitHub でリポジトリをセットアップする
+
+リモートを切り替え
+```
+PS C:\dev\storybook\taskbox> git remote add origin https://github.com/yao808080/taskbox.git
+error: remote origin already exists.
+PS C:\dev\storybook\taskbox> git remote rm origin
+PS C:\dev\storybook\taskbox> git remote add origin https://github.com/yao808080/taskbox.git
+PS C:\dev\storybook\taskbox> 
+```
+
+```
+git add .
+git commit -m "GitHub action setup"
+git push origin main
+```
