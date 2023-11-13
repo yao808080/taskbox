@@ -1,7 +1,26 @@
 <script setup>
 import Task from '@/components/Task.vue'
 import TaskList from '@/components/TaskList.vue'
+import Sample from '@/components/Sample.vue'
+</script>
 
+<script>
+export default {
+    name: "App",
+    components: {
+        Sample,
+    },
+    data() {
+        return {
+            message: "こんにちは！",
+        };
+    },
+    methods: {
+        getMessage(value) {
+            this.message = value;
+        },
+    },
+};
 </script>
 
 <template>
@@ -33,6 +52,14 @@ import TaskList from '@/components/TaskList.vue'
       <TaskList :tasks="[]" loading v-on:pin-task="() => { }" v-on:archive-task="() => { }" />
       <div>Empty</div>
       <TaskList :tasks="[]" v-on:pin-task="() => { }" v-on:archive-task="() => { }" />
+    </div>
+
+    <div>
+      <div>Sample</div>
+      <div>
+        <sample v-on:onClick="() => { }" />
+        {{ message }}
+      </div>
     </div>
   </main>
 </template>
