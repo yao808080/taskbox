@@ -152,7 +152,43 @@ src/index.cssのcolorを修正
 
 
 # Composite component
+単純なコンポーネントから複合コンポーネントを組み立てる
 
-新規作成
+新規作成：Taskタグを束ねるコンポーネント
+```
 src\components\TaskList.vue
 src\components\TaskList.stories.js
+```
+
+
+
+複合コンポーネントは、それに含まれる基本コンポーネントと大きな違いはありません。TaskListコンポーネントとそれに付随するストーリー ファイルを作成します
+
+![Alt text](image-12.png)
+
+## Data
+コンテナのコンポーネント
+TaskList現在作成されているコンポーネントは、それ自体の実装の外部とは何も通信しないという点で「プレゼンテーション用」です。データを取り込むには「コンテナ」が必要です。
+
+
+この例では、ピニア, Vue のデフォルトのデータ管理ライブラリ。アプリ用の簡単なデータ モデルを構築します。ただし、ここで使用されているパターンは、次のような他のデータ管理ライブラリにも同様に当てはまります。
+
+ピニア インストール
+```
+yarn add pinia
+```
+
+新規作成：srcディレクトリ内で呼び出されるタスクの状態を変更するアクションに応答する単純な Pinia ストアを作成
+```
+src/store.js
+```
+
+新規作成:TaskList->PureTaskListと別名にして切り離す
+```
+src/components/PureTaskList.vue
+```
+
+更新：ストアからデータを読み取るように更新する
+```
+src/components/TaskList.vue
+```
